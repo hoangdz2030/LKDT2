@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ShopappAngular</title>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+  <style>
+    body {
+      background: #ECECEC !important;
+      color:black;
+    }
+  </style>
+</head>
+
+<body style="background-color: #ECECEC !important;">
+
+  <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.2/libs/oversea/index.js"></script>
+  <script>
+      new CozeWebSDK.WebChatClient({
+        config: {
+          bot_id: '7375090627584720913',
+        },
+        componentProps: {
+          title: 'Coze',
+        },
+      });
+  </script>
+  <app-root></app-root>
+</body>
+</html>

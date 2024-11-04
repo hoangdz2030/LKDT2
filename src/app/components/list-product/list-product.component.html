@@ -1,0 +1,46 @@
+<div style="margin-bottom: 40px;"></div>
+<div class="main" style="border: 1px solid; border-color: #fff; background-color: #fff; border-radius: 4px;">
+  <div class="row" style="margin-left: 5px;margin-right: 5px;">
+    <div class="col-10" style="font-weight: bolder;font-size: 30px;margin-top: 20px;">
+      @for(category of categories; track category.id){
+      @if(category.id == categoryId){
+      <h2 class="title">{{category.name}}</h2>
+      }
+      }
+    </div>
+    <div class="col-2" style="font-size: 20px; margin-top: 20px;">
+      <a href="/categories?keyword=&selectedCategoryId=1">
+        <h2>Xem tất cả</h2>
+      </a>
+    </div>
+  </div>
+  <swiper-container style="margin-left: 2px;margin-right: 2px;" class="row" [slidesPerView]="slidesPerView"
+    navigation="true" spacebetween="true" pagination-clickable="true" pagination="true">
+    @for(product of products; track product.id) {
+    @if (product.category_id == categoryId){
+    <swiper-slide class="col-lg-2">
+      <div class="card">
+        <div class="product-item" style="
+      padding-right: 0px;
+      padding-left: 0px;
+  " (click)="onProductClick(product.id)">
+          <app-product-cart [product]="product"></app-product-cart>
+          <img [src]="product.url" alt="Product Image" class="product-image" style="height: 200px;">
+          <h3 class="product-name text-xl font-bold">{{ product.name }} </h3>
+
+          <p class="product-price" style="font-size: 18px;"><del> {{ product.price1 | number:'1.0-2' }}
+            </del></p>
+          <p class="product-price" style="font-size: 18px; font-weight: bolder; color: red;">{{ product.price |
+            number:'1.0-2' }} VND<span class="sale">-6%</span></p>
+
+        </div>
+      </div>
+    </swiper-slide>
+    }
+    }
+  </swiper-container>
+</div>
+
+
+
+<div style="margin-bottom: 40px;"></div>

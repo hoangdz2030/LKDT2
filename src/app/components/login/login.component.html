@@ -1,0 +1,91 @@
+
+<div class="container">
+    <div class="row">
+        <div class="" style="
+        margin-left: 15%;
+    ">
+            <div class="" style="border: 1px solid;
+            padding: 30px;
+            border-radius: 10px;
+            width: 1000px;
+            height: 720px;">
+                <h4 class="h1" style="font-weight: 600;
+                line-height: 20px;
+                margin-top: 20px;
+                margin-bottom: 50px;
+                text-align: center;">ĐĂNG NHẬP HOẶC TẠO TÀI KHOẢN</h4>
+                <div class="form-group">
+                    <label for="phoneNumber" style="font-size: 20px;">Email Hoặc Số Điện Thoại</label>
+                    <input style="border: 1px solid black;" type="text" class="form-control"
+                        [(ngModel)]="phoneNumber"
+                            (input)="onPhoneNumberChange()"
+                            name="phone"
+                            (focus)="loginForm.form.markAsTouched()"
+                    id="phoneNumber" placeholder="Nhập email hoặc số điện thoại">
+                    <div class="divider-nospace"></div>
+                </div>
+                <div class="form-group password-field" >
+                    <label for="password" style="font-size: 20px;">Mật khẩu</label>
+                    <input style="border: 1px solid black;" type="{{ showPassword ? 'text' : 'password' }}"
+                        [(ngModel)]="password"
+                        name="password"
+                        placeholder="Nhập mật khẩu"
+                        class="form-control" id="password">
+                    <i style="color: black; margin-top: 15px;" class="password-toggle fas" [ngClass]="showPassword ?
+                        'fa-eye' : 'fa-eye-slash'" (click)="togglePassword()"></i>
+                    <!-- <div class="divider-nospace"></div> -->
+                </div>
+                <div class="form-group">
+                    <div class="form-check checkbox-text">
+                      <span style="display: flex;">
+                        <input type="checkbox"
+                            class="form-check-input"
+                            id="remember"
+                            [(ngModel)]="rememberMe">
+                        <label style="color: black;" class="form-check-label text-start" for="remember">
+                            Ghi nhớ tài khoản</label>
+                      </span>
+                      <!-- <a href="#" style="color: black;" class="register-link">Quên mật khẩu?</a> -->
+                    </div>
+                  </div>
+
+                <!-- <div class="form-group">
+                    <select class="form-control access-right"
+                        [(ngModel)]="selectedRole">
+                        <option selected disabled>Login Role</option>
+                        @for(role of roles; track role.name) {
+                            <option [ngValue]="role">
+                                {{ role.name }}
+                            </option>
+                        }
+                    </select>
+                  </div> -->
+
+                  <button
+                    type="button"
+                    (click)="login()"
+                    class="login-button" style="background-color: #E30019; border-radius: 5px; color: white; margin-bottom: 10px;">Đăng nhập</button>
+                    <h5 style="text-align: center; margin-bottom: 10px;" style="font-size: 20px; text-align: center;margin-bottom: 10px;">Hoặc đăng nhập bằng</h5>
+
+                    <div class="button-group" style="text-align: center;">
+                        <button class="btn-google" (click)="continueWithGoogle()">
+                          <i class="fab fa-google" style="margin-right: 5px"></i>
+                          Continue with Google
+                        </button>
+                        <!-- <button class="btn-facebook" (click)="continueWithFacebook()">
+                          <i class="fab fa-facebook" style="margin-right: 5px"></i>
+                          Continue with Facebook
+                        </button> -->
+                      </div>
+
+                  <div class="divider"></div>
+                  <p class="text-center" style="font-size: 20px; text-align: center;margin-bottom: 10px;">Bạn chưa có tài khoản? <span>
+                    <a class="register-link"
+                        (click)="createAccount()"style="font-size: 20px; text-align: center;margin-bottom: 10px;"> Đăng ký ngay</a>
+                </span></p>
+
+    </div>
+</div>
+</div>
+</div>
+<app-footer></app-footer>

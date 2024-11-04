@@ -1,0 +1,88 @@
+<!-- <div class="container">
+    <h1>Category Admin</h1>
+    <div class="row">
+      <div class="col-md-8 ">
+        <button class="btn btn-success" (click)="insertCategory()">Add new Category </button>
+      </div>
+    </div>
+    <table class="table">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(category of categories; track category.id){
+          <tr>
+            <td>{{ category.id }}</td>
+            <td>{{ category.name }}</td>
+            <td>
+              <div style="display: flex; gap: 10px;">
+                <button class="btn btn-primary"
+                    (click)="updateCategory(category.id)">
+                  Update
+                </button>
+                <button class="btn btn-danger"
+                  (click)="deleteCategory(category)">Delete
+                </button>
+                </div>
+            </td>
+          </tr>
+        } @empty {
+          <h2>No categories found</h2>
+        }
+
+      </tbody>
+    </table>
+  </div> -->
+  <div style="margin-top: 2%;"></div>
+  <div style="border: 1 solid; background-color: #5b5d8f; padding: 20px; border-radius: 30px;">
+    <h1 class="text-3xl font-bold" style="text-align: center;margin-bottom: 20px;">Quản lý đơn đặt hàng</h1>
+
+    <div class="flex flex-wrap -mx-2">
+      <!-- <div class="w-full md:w-8/12 px-2">
+        <button class="mb-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" (click)="insertCategory()">
+          Add new Category
+        </button> -->
+        <div class="d-flex justify-content-center" style="margin: 10px;">
+          <button class="btn rounded-lg shadow-md hover:bg-gray-600 transition duration-300 ease-in-out px-4 py-2"
+                  style="background-color: #1F2937; color: white; border: 1px solid #4B5563;"(click)="insertCategory()">
+            Add new product
+          </button>
+        </div>
+    </div>
+    <table class="table-auto w-full bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+      <thead class="bg-gray-700">
+        <tr>
+          <th class="px-4 py-2 text-gray-300">ID</th>
+          <th class="px-4 py-2 text-gray-300">Name</th>
+          <th class="px-4 py-2 text-gray-300">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(category of categories; track category.id){
+          <tr>
+            <td class="border px-4 py-2">{{ category.id }}</td>
+            <td class="border px-4 py-2">{{ category.name }}</td>
+            <td class="border px-4 py-2">
+              <div class="flex space-x-4">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    (click)="updateCategory(category.id)">
+                  Update
+                </button>
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                  (click)="deleteCategory(category)">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+                </div>
+            </td>
+          </tr>
+        } @empty {
+          <h2 class="text-2xl font-bold">No categories found</h2>
+        }
+
+      </tbody>
+    </table>
+  </div>

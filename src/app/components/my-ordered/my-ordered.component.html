@@ -1,0 +1,38 @@
+<app-header></app-header>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<div class="container" style="font-family: Arial, Helvetica, sans-serif;">
+
+  <hr class="line mt-4">
+
+  <div class="col-md-12 luxury-container">
+    <table class="luxury-table">
+      <thead >
+        <tr style="font-family: Arial, Helvetica, sans-serif;">
+          <th>Hình ảnh</th>
+          <th>Sản phẩm</th>
+          <th>Số điện thoại</th>
+          <th>Phương thức thanh toán</th>
+          <th>Trạng thái</th>
+          <th>Tổng tiền</th>
+        </tr>
+      </thead>
+      <tbody style="font-family: Arial, Helvetica, sans-serif;">
+        @for(item of orders; track item){
+          <tr (click)="toOrderDetail(item.id)">
+            <td><img class="product-images" [src]="item.order_details[0].thumbnail" alt="Ảnh sản phẩm"></td>
+            <td>{{ item.order_details[0].product_name }}</td>
+            <td>{{ item.phone_number }}</td>
+            <td>{{ item.payment_method }}</td>
+            <td>{{ item.status }}</td>
+            <td>{{ item.total_money | number:'1.0-0' }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
+
+<app-footer></app-footer>

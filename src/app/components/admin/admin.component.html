@@ -1,0 +1,91 @@
+<div class="container-fluid"
+  style="background-image: url('https://codervent.com/maxton/demo/vertical-menu/assets/images/bg-themes/body-background-1.webp'); background-size: cover; color: white;">
+
+  <!-- <header class="header bg-success text-white d-flex justify-content-between">
+      <h1 class="text-3xl font-bold">Dashboard Header</h1>
+      <button class="btn btn-danger btn-sm" (click)="logout()">Logout</button>
+    </header> -->
+  <div class="row">
+    <nav id="sidebar" class="col-md-2 col-lg-2 d-md-block bg-light sidebar"
+      style="background-color: #0f1535 !important; color: #a7acb1;">
+      <div class="sidebar-header" style="display: flex; align-items: center;">
+        <div class="logo-icon">
+          <img src="https://codervent.com/maxton/demo/vertical-menu/assets/images/logo-icon.png" class="logo-img" alt=""
+            style="width: 45px;">
+        </div>
+        <div class="logo-name" style="flex-grow: 1; margin-left: 10px;">
+          <h5 class="mb-0" style="font-size: 24px; text-transform: capitalize; font-weight: 600;">HOANGTAI</h5>
+        </div>
+      </div>
+      <div class="format" style="margin-top: 30px;"></div>
+      <div class="position-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" (click)="showAdminComponent('Home')" routerLink="/admin/home" routerLinkActive="active">
+              <i class="fa-solid fa-house icon"></i>Trang chủ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="showAdminComponent('orders')" routerLink="/admin/orders"
+              routerLinkActive="active">
+               <i class="fa-solid fa-truck-fast icon"></i>Đơn đặt hàng
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="showAdminComponent('comment')" routerLink="/admin/comment" >
+              <i class="fa-regular fa-comment icon" ></i>Bình luận
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="showAdminComponent('users')" routerLink="/admin/users"
+              routerLinkActive="active">
+              <i class="fa-solid fa-user icon"></i>Người dùng
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" (click)="showAdminComponent('products')" routerLink="/admin/products"
+              routerLinkActive="active">
+              <i class="fa-solid fa-boxes-packing icon"></i>Sản phẩm
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="showAdminComponent('categories')" routerLink="/admin/categories"
+              routerLinkActive="active">
+              <i class="fa-solid fa-clipboard-list icon"></i>Danh mục
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="showAdminComponent('baiviet')" routerLink="/admin/baiviet"
+              routerLinkActive="active">
+              <i class="fa-solid fa-clipboard-list icon"></i>Bài viết
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="showAdminComponent('discount')" routerLink="/admin/discount"
+              routerLinkActive="active">
+              <i class="fa-solid fa-tag icon"></i>Khuyến mãi
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="showAdminComponent('tonkho')" routerLink="/admin/tonkho"
+              routerLinkActive="active">
+              <i class="fa-solid fa-warehouse icon"></i>Tồn kho
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="showAdminComponent('baiviet')" routerLink="/admin/baiviet"
+              routerLinkActive="active">
+              <i class="fa-solid fa-file-contract icon"></i>Điều kiện khuyến mãi
+            </a>
+          </li>
+
+
+        </ul>
+      </div>
+    </nav>
+    <div class="col-md-10 col-lg-10 overflow-auto">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div class="container" style="color: black;">
+    <div class="intro-section">
+        <h1 style="font-weight: bolder; font-size: 50px; text-align: center;">Chi tiết đặt hàng</h1>
+    </div>
+
+    <!-- Receiver information -->
+    @if(orderResponse) {
+        <div class="row" style="border: 1px solid rgb(182, 179, 179); border-radius: 5px;padding: 10px;">
+            <div class="col-md-3"style="border: 1px solid #fff; background-color: #fff; border-radius: 5px; padding: 10px;">
+                <div class="mb-3">
+                    <p class="form-label"><span>Họ tên :</span> {{ orderResponse.fullname }}</p>
+                </div>
+                <!-- Other information fields -->
+                <div class="mb-3">
+                    <p class="form-label"><span>Email :</span> {{ orderResponse.email }}</p>
+                </div>
+                <div class="mb-3">
+                    <p class="form-label"><span>Số điện thoại :</span> {{ orderResponse.phone_number }}</p>
+                </div>
+                <div class="mb-3">
+                    <p class="form-label"><span>Địa chỉ :</span> {{ orderResponse.address }}</p>
+                </div>
+                <div class="mb-3">
+                    <p class="form-label"><span>Ghi chú :</span> {{ orderResponse.note }}</p>
+                </div>
+                <div class="mb-3">
+                    <p class="form-label"><span>Phương thức vận chuyển :</span> {{ orderResponse.shipping_method }}</p>
+                </div>
+                <div class="mb-3">
+                    <p class="form-label"><span>Phương thức thanh toán :</span> {{ orderResponse.payment_method }}</p>
+                </div>
+            </div>
+
+            <!-- Ordered products -->
+            <div class="col-md-9">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-start">Sản phẩm</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Giá</th>
+                            <th scope="col">Tổng tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of orderResponse.order_details">
+                            <td>
+                                <div class="product-info">
+                                    <img [src]="item.thumbnail" alt="Product Image" class="product-image">
+                                    <span class="product-name">{{ item.product_name }}</span>
+
+                                </div>
+                            </td>
+                            <td>{{ item.number_of_products }}</td>
+                            <td>{{ item.price | number:'1.0-0' }}</td>
+                            <td>{{ item.number_of_products * item.price  | number:'1.0-0' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="text-start mt-3" style="text-align: center; font-size: large;">
+                    <h4 class="header-text text-end"><b>Tổng tiền: <span style="color: #e30019;">{{ orderResponse.total_money | number:'1.0-0' }}</span></b></h4>
+                </div>
+            </div>
+        </div>
+}
+</div>
+<app-footer></app-footer>

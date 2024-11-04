@@ -1,0 +1,39 @@
+.user-management {
+  background-color: #5b5d8f; /* Màu nền của khung */
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.user-table {
+  color: white; /* Màu chữ cho bảng */
+  text-align: center; /* Căn giữa chữ trong bảng */
+}
+
+.table-header {
+  background-color: #3a3b5a; /* Màu nền của tiêu đề bảng */
+}
+
+.user-table th {
+  padding: 12px; /* Khoảng cách cho tiêu đề bảng */
+}
+
+.user-table td {
+  padding: 12px; /* Khoảng cách cho ô dữ liệu */
+}
+
+.bg-dark-purple {
+  background-color: #5b5d8f; /* Màu nền khung */
+}
+
+.bg-blue-500 {
+  background-color: #3b82f6; /* Màu nền cho nút Reset Password */
+}
+
+.bg-red-600 {
+  background-color: #ef4444; /* Màu nền cho nút Block User */
+}
+
+.bg-blue-500:hover,
+.bg-red-600:hover {
+  transition: background-color 0.3s; /* Hiệu ứng khi hover */
+}

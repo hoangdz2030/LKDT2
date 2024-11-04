@@ -1,0 +1,133 @@
+ @import '../../styles/shared-styles.scss';
+
+// .container{
+//     color: black;
+//     margin-bottom: 100px;
+// }
+// table {
+//     width: 100%;
+//     border-radius: 10px;
+//     border: none;
+//     border-collapse: separate;
+//     border: 1px solid black;
+//     border-spacing: 0;
+//     background-color: $shopapp-background-color;
+//     padding: 80px;
+// }
+// thead{
+//     font-size: 20px;
+//     margin-bottom: 20px;
+// }
+// th{
+//     text-align: center;
+// }
+// tr{
+//     padding-top: 20px !important ;
+// }
+// tr:hover{
+//     background-color: rgb(108, 97, 120);
+//     border-radius: 8px;
+// }
+// td{
+//     margin-top: 100px;
+//     text-align: center;
+// }
+// img{
+//     width: 60px !important;
+//     border-radius: 8px;
+//     margin-right: 10px;
+// }
+// tr :nth-child(1){
+//     text-align: left;
+//     cursor: pointer;
+// }
+// .product-images{
+//     margin: 5px 10px;
+//     border-radius: 10px;
+// }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px; /* Kích thước font mặc định */
+  color: #333;     /* Màu chữ mặc định */
+  line-height: 1.6; /* Khoảng cách dòng cho dễ đọc */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.luxury-table {
+  font-weight: 400; /* Font-weight mặc định cho bảng */
+}
+/* Áp dụng cho bảng luxury-table */
+.luxury-table {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.luxury-container {
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.luxury-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.luxury-table thead th {
+  background-color: #333;
+  color: #f5f5f5;
+  padding: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.luxury-table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.luxury-table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.luxury-table td, .luxury-table th {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.luxury-table .product-images {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.luxury-table .product-images:hover {
+  transform: scale(1.1);
+}
+
+.luxury-table tbody td:last-child {
+  font-weight: bold;
+  color: #e30019;
+}
+
+.luxury-table tbody td:nth-child(5) {
+  font-style: italic;
+  color: #777;
+}
+
+.luxury-table tbody td:nth-child(2) {
+  text-align: left;
+  padding-left: 20px;
+}

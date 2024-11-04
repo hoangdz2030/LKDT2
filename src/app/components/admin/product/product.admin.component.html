@@ -1,0 +1,110 @@
+<div class="mx-auto px-4">
+  <div class="flex justify-center mb-4" style="margin-top: 20px;">
+    <div class="w-full md:w-8/12 px-2" style="margin: auto; margin-left: 20%;">
+      <!-- <input type="text"
+        class="search-input shadow appearance-none rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Search" v-model="keyword"> -->
+        <input class="search-input shadow appearance-none rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Search product" [(ngModel)]="keyword">
+    </div>
+    <div class="w-full md:w-4/12 px-2">
+      <button class="search-button text-white font-bold py-2 px-4 rounded-full" (click)="searchProducts()">Search</button>
+    </div>
+  </div>
+  <div style="border: 1 solid; background-color: #5b5d8f; padding: 20px; border-radius: 30px;">
+    <h1 class="text-3xl font-bold" style="text-align: center;margin-bottom: 20px;">Quản lý đơn đặt hàng</h1>
+    <!-- <div class="row mb-3">
+      <div class="col-md-8">
+        <input type="text" class="form-control search-input" placeholder="Search product" [(ngModel)]="keyword">
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-primary" (click)="searchProducts()">Search</button>
+      </div>
+    </div> -->
+    <div class="d-flex justify-content-center" style="margin: 10px;">
+      <button class="btn rounded-lg shadow-md hover:bg-gray-600 transition duration-300 ease-in-out px-4 py-2"
+              style="background-color: #1F2937; color: white; border: 1px solid #4B5563;"(click)="insertProduct()">
+        Add new product
+      </button>
+    </div>
+<!--
+    <div class="row">
+      <div class="col-md-8 ">
+        <button class="btn btn-success" >Add new product</button>
+      </div>
+    </div> -->
+
+    <table class="min-w-full bg-gray-800 border border-gray-700 shadow-lg"
+       style="color: white; text-align: center; border-radius: 8px; overflow: hidden;">
+  <thead class="bg-gray-700">
+    <tr>
+      <th class="py-3 px-4 text-left text-gray-300 font-semibold">ID</th>
+      <th class="py-3 px-4 text-left text-gray-300 font-semibold">Name</th>
+      <th class="py-3 px-4 text-left text-gray-300 font-semibold">Price</th>
+      <th class="py-3 px-4 text-left text-gray-300 font-semibold">Thumbnail</th>
+      <th class="py-3 px-4 text-left text-gray-300 font-semibold">Actions</th>
+    </tr>
+  </thead>
+      <tbody>
+        @for(product of products; track product.id) {
+          <tr class="cursor-pointer transition ease-in-out" >
+            <td>{{ product.id }}</td>
+            <td >{{ product.name }}</td>
+            <td>{{ product.price | number:'1.0-2'  }}</td>
+            <td>
+              <img src="{{ product.url }}"
+                class="rounded-square" alt="Thumbnail"
+                width="100" height="100">
+            </td>
+            <!-- <td>{{ product.description }}</td> -->
+            <td>
+              <div style="display: flex; gap: 10px;">
+                <button class="bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700"
+                    (click)="updateProduct(product.id)">
+                  Update
+                </button>
+
+                <button class="bg-red-600 text-white px-2 py-1 rounded hover:bg-red-700"
+                  (click)="deleteProduct(product)"><i class="fa-solid fa-trash"></i>
+                </button>
+                </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <nav aria-label="Page navigation" style="margin: 10px;">
+        <ul class="pagination">
+          @if(currentPage > 0) {
+            <li class="page-item">
+              <a class="page-link" (click)="onPageChange(0)">First</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" (click)="onPageChange(currentPage - 1)">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+            </li>
+          }
+          @for(page of visiblePages; track page) {
+            <ng-container>
+              <li class="page-item" [ngClass]="{'active': page === currentPage + 1}">
+                <a class="page-link" (click)="onPageChange(page - 1)">{{ page }}</a>
+              </li>
+            </ng-container>
+          }
+          @if(currentPage < totalPages - 1)   {
+            <li class="page-item">
+              <a class="page-link" (click)="onPageChange(currentPage + 1)">
+                <i class="fa fa-chevron-right"></i>
+              </a>
+            </li>
+            <li class="page-item" >
+              <a class="page-link" (click)="onPageChange(totalPages - 1)">Last</a>
+            </li>
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+  </div>
+

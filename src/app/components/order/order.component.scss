@@ -1,0 +1,115 @@
+@import '../../styles/shared-styles.scss';
+
+.container {
+    color: black;
+    margin-top: 100px;
+}
+.intro-section {
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+.product-header {
+    color: $shopapp-tint-color;
+}
+.form-control {
+    background-color: $shopapp-background-color;
+    border: 1px solid rgb(29, 33, 54);
+    color: black;
+}
+
+.form-control:focus {
+    border-color: black;
+    background-color: $shopapp-background-color;
+}
+.form-label {
+    color: black;
+}
+.product-header {
+    color: $shopapp-tint-color;
+}
+.product-order {
+    color:black;
+}
+.buton-place:hover{
+    background-color:aliceblue;
+}
+table {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    border-collapse: separate;
+    border: 1px solid white;
+    border-spacing: 0;
+    background-color: $shopapp-background-color;
+}
+
+th,
+td {
+    padding: 7px;
+    text-align: center;
+}
+.product-info {
+    display: flex;
+    align-items: center;
+}
+
+.product-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: 1px solid rgb(211, 210, 210);
+    padding: 2%;
+}
+
+.product-name {
+    color: black;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.btn-gradient {
+    color: black;
+    border-radius: 30px;
+    width: 200px;
+}
+
+.border-wrapper {
+    border: 1px solid white;
+    width: 100px;
+    height:30px;
+    border-radius: 10px;
+    background-color: rgb(211, 210, 210);
+}
+
+.product-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    width: 100px;
+    height:30px;
+}
+
+.product-quantity button {
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product-quantity input {
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    width: 40px;
+    margin: 0 10px;
+}
+
+.product-quantity input:focus {
+    outline: none;
+}

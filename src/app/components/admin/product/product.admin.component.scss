@@ -1,0 +1,52 @@
+@import '../../../styles/shared-styles.scss';
+.search-input {
+  background-color: #1e1e2f; /* Màu nền tối */
+  color: #a0a3bd; /* Màu chữ */
+  border: 1px solid #3a3b5a; /* Màu viền */
+}
+
+.search-input::placeholder {
+  color: #6c6e82; /* Màu placeholder nhạt */
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(144, 144, 255, 0.5); /* Hiệu ứng khi focus */
+}
+
+.search-button {
+  background-color: #3a3b5a; /* Màu nền của nút */
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #5b5d8f; /* Màu nền khi hover */
+}
+.page-number {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    margin: 0 2px;
+    border-radius: 3px;
+}
+
+.page-number.active {
+    background-color: $shopapp-color !important;
+    color: black;
+    border-color: $shopapp-color !important;
+}
+
+.btn.btn-primary {
+    margin-left: 10px;
+}
+.container-fluid {
+    background-color: white;
+    padding-left: 0 !important; /* Remove left padding */
+    padding-right: 0 !important; /* Remove right padding */
+    height: 100vh;
+}
+
+.rounded-square {
+    border-radius: 10px;
+}

@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-8" style="height: 100%; position: relative;">
+    <!-- Nút lùi hình -->
+    <button (click)="previousImage()" class="arrow-button left-arrow">
+      &#10094; <!-- Mũi tên trái -->
+    </button>
+
+    <!-- Hình ảnh hiện tại -->
+    <img [src]="images[currentImageIndex]" (click)="toCategory(1)" alt="">
+
+    <!-- Nút chuyển hình -->
+    <button (click)="nextImage()" class="arrow-button right-arrow">
+      &#10095; <!-- Mũi tên phải -->
+    </button>
+  </div>
+
+  <div class="col-4">
+    <img src="https://file.hstatic.net/200000722513/file/thang_10_layout_web_-03.png" alt="">
+    <img src="https://file.hstatic.net/200000722513/file/thang_10_layout_web_-04.png" alt="">
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <img src="https://file.hstatic.net/200000722513/file/thang_10_layout_web_-03.png" alt="">
+  </div>
+  <div class="col-4">
+    <img src="https://file.hstatic.net/200000722513/file/thang_10_layout_web_-03.png" alt="">
+  </div>
+  <div class="col-4">
+    <img src="https://file.hstatic.net/200000722513/file/thang_10_layout_web_-03.png" alt="">
+  </div>
+</div>
